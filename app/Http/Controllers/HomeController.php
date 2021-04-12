@@ -93,4 +93,10 @@ class HomeController extends Controller
 
         return redirect('/');
     }
+
+    public function delete($id)
+    {
+        Article::find($id)->delete();
+        return redirect('/');
+    }
 }

@@ -16,9 +16,13 @@
         <div class="card-body">
           <h5>Judul : {{$datas->title}}</h5>
           <p>{{$datas->subject}}</p>
-          <a href="/article/{{$datas->id}}/delete" class="btn btn-danger btn-sm">Hapus</a>
           <a href="/article/{{$datas->id}}/edit" class="btn btn-success btn-sm">Edit</a>
           <a href="/article/{{$datas->title}}" class="btn btn-sm btn-info text-white">Baca</a>
+          <form action="/article/{{$datas->id}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger btn-sm my-4">Hapus</button>
+          </form>
         </div>
       </div>
     </div>
